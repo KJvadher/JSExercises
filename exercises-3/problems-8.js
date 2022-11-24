@@ -9,7 +9,16 @@
 */
 
 function react(sequence) {
-
+    var news= sequence.split(/(?=[A-Z])/);
+    let g = []
+    //console.log(news[1].length)
+    for(let i = 0; i< news.length; i++){
+        if(news[i].length == 1){
+            g.push(news[i])
+            
+        }
+    }
+    return g
 }
 
 // Do not modify this code

@@ -5,22 +5,31 @@
     "yes, descending" - if the numbers in the array are sorted in a descending order
     "no" - otherwise
 */
-
-let output = ''
-let n2 = 0
-for(let i=0; i<x.length; i++){
-    n2 = i + 1;
-    if(x[n2] - x[i] > 0){
-        output = 'yes, ascending'
+function isSortedAndHow(nums) {
+    var isDescending = true;
+    var isAscending = true;
+    let output = ''
+  
+    for (var i=0; i<nums.length-1; i++){
+       isDescending = isDescending && (nums[i] > nums[i+1]);
+       isAscending = isAscending && (nums[i] < nums[i+1]);
     }
-    else if(x[n2] - x[i] < 0){
-        output = 'yes, descending'
+    
+    if (isAscending)
+    {
+      output = 'yes, ascending';
     }
-    else{
-        output = 'no'
+    else if (isDescending) 
+    {
+        output = 'yes, descending';
     }
+    else
+    {
+        output = 'no';
+    }
+    return output
 }
-console.log(output)
+
 
 // Do not modify this code
 window.solutions = window.solutions || {}

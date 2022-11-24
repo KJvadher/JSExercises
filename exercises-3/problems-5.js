@@ -8,7 +8,29 @@
 */
 
 function findUnique(input) {
-    
+
+    const counts = {}
+
+    let a = 0
+
+    for(const i of input){
+
+        counts[i] = counts[i] ? counts[i] + 1 : 1;
+
+    }
+
+    for(const i in counts){
+
+        if(counts[i]==1){
+
+            a = parseInt(i)
+
+            return a
+
+        }
+
+    }
+
 }
 
 // Do not modify this code
